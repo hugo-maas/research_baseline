@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: _output
+
+# =============================================================================
+# CATEGORY REGISTRY (Workflow Guide)
+# Use these in YAML headers to maintain searchability and organization.
+# -----------------------------------------------------------------------------
+# [Fundamental]: Core theory, mathematical derivations, and permanent laws.
+# [Transient]:   Daily logs, troubleshooting, and trial-and-error sessions.
+# [Specific_A]:  Primary project pillar (e.g., Causal Inference).
+# [Specific_B]:  Secondary project pillar (e.g., Data Engineering).
+# [Literature]:  Syntheses of external papers or internal reports.
+# =============================================================================
+
+# Global Bibliography: Ensures every .qmd recognizes your root .bib file.
+bibliography: references.bib
+# csl: vancouver.csl # Uncomment to apply specific citation styles.
+
+website:
+  title: "PROJECT_NAME Journal"
+  sidebar:
+    style: "floating"
+    contents:
+      - section: "Synthesis (Foundations)"
+        contents:
+          - synthesis/index.qmd
+          - synthesis/core_theory_01.qmd
+      - section: "Daily Logs (Chronological)"
+        contents:
+          - journal/index.qmd # Usually a 'listing' page for all .qmd files here.
+
+format:
+  html:
+    theme: cosmo
+    toc: true           # Table of Contents for "Patient Examination."
+    code-fold: true     # Keeps the interface "Serene" by hiding raw code.
+    citation-location: margin # Optional: Moves citations to the side.

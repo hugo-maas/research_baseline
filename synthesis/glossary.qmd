@@ -1,0 +1,43 @@
+---
+title: "Project Glossary & Fact File"
+description: "Core parameters and metadata for this project."
+---
+
+```{r}
+#| echo: false
+#| message: false
+library(here)
+library(yaml)
+library(knitr)
+library(dplyr)
+
+# Load the project facts
+info <- yaml.load_file(here("project_info.yml"))
+
+#| echo: false
+# Flatten the lists of studies, projects and parameters into data frames
+trt_df <- bind_rows(info$treatments)
+# Replace any NA/null with a dash
+trt_df[is.na(trt_df)] <- "—"
+
+project_df <- bind_rows(info$project)
+
+param_df <- bind_rows(info$parameters)
+# Clean null values for a clean visual look
+param_df[is.na(param_df)] <- "—"
+
+kable(trt_df,
+    col.names = c("Study ID", "Type", "Route", "Dose"),
+    caption = "Summary of treatments by study"
+)
+
+kable(project_df, caption = "Project Metadata")
+
+kable(param_df, caption = "Model Parameters")
+
+### Structural Consistency Notes
+# **Methodology**: By using `bind_rows`, each top-level key in your YAML (like `project` or `parameters`) is treated as a single row where the sub-keys become columns.
+# **Reliability**: This approach is more resilient than `data.frame()` when dealing with the list-based structures returned by `yaml.load_file`.
+# **Visual Integrity**: The use of `is.na(df) <- "—"` ensures that your final rendered document maintains its solemnity by removing technical `NA` markers.
+
+```

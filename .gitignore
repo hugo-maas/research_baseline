@@ -1,0 +1,24 @@
+# Quarto & Documentation
+/_output/
+/.quarto/
+.DS_Store
+
+# R Environment & Temporary Files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Rapp.history
+*.Rproj
+
+# Data & Scripts (Optional exclusions for security/cleanliness)
+data/raw/ # Exclude raw data if it is sensitive or too large
+*.csv
+*.rds
+*.rds~
+
+# NONMEM/Modeling Artifacts (If applicable)
+*.lst
+*.out
+*.ext
+*.tab

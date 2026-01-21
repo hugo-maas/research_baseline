@@ -1,0 +1,25 @@
+# project_info.yml
+# Central registry for project metadata and causal study parameters.
+
+project:
+  id: "CT_2026_01"
+  theme: "Causal Inference in Time Series"
+  framework: "Rubin Causal Model"
+
+parameters:
+  sampling_rate_metric: "seconds"
+  observation_window: null # TBD
+
+treatments:
+  - id: "STUDY_001"
+    type: "Intervention"
+    route: "iv"
+    dose: "10 mg/kg"
+  - id: "STUDY_002"
+    type: "Observation"
+    route: "po"
+    dose: "30 mg/kg"
+  - id: "STUDY_003"
+    type: "Placebo"
+    route: "iv"
+    dose: "0 mg/kg"

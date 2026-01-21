@@ -1,0 +1,19 @@
+{
+  "Quarto Journal Header": {
+    "scope": "quarto,markdown",
+    "prefix": "qj",
+    "body": [
+      "---",
+      "title: \"${1:Title}\"",
+      "date: \"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE\"",
+      "author: \"User\"",
+      "categories: [${2|Transient,Fundamental,Literature,Data,Theory|}]",
+      "description: \"${3:Summary of thoughts and analysis performed.}\"",
+      "---",
+      "",
+      "## Objective",
+      "$0"
+    ],
+    "description": "Generate a standardized YAML header for research journal entries."
+  }
+}

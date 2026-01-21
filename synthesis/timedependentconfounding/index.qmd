@@ -1,0 +1,5 @@
+---
+title: "Synthesis: Addressing confounding in exposure-response analyses containing time-dependent covariates"
+---
+
+## Source documents
